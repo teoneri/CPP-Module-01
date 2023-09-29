@@ -6,7 +6,7 @@
 /*   By: mneri <mneri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:26:25 by mneri             #+#    #+#             */
-/*   Updated: 2023/09/29 15:33:10 by mneri            ###   ########.fr       */
+/*   Updated: 2023/09/29 16:14:54 by mneri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,35 @@ Harl::Harl(void)
 Harl::~Harl(void){
 }
 
-void Harl::complain(std::string level)
+int find_level(std::string level)
 {
 	std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	for(int i = 0; i < 4; i++)
 	{
 		if(!level.compare(levels[i]))
 		{
-			(this->*logFunctions[i])();
-			return ;
+			return i;
 		}
 	}
-	std::cout << "No level found" << std::endl;
+	return 5;
+}
+
+void Harl::complain(std::string level)
+{
+	int i = find_level(level);
+	switch (i)
+	{
+	case 0:
+		this->debug();
+	case 1:
+		this->info();
+	case 2:
+		this->warning();
+	case 3:
+		this->error();
+		break;
+	default:
+		std::cout << "No level found" << std::endl;
+		break;
+	}
 }

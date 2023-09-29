@@ -6,7 +6,7 @@
 /*   By: mneri <mneri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 16:26:29 by mneri             #+#    #+#             */
-/*   Updated: 2023/09/29 15:25:14 by mneri            ###   ########.fr       */
+/*   Updated: 2023/09/29 16:13:42 by mneri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ class Harl
 	public:
 		Harl(void);
 		~Harl(void);
-		void	complain(std::string level);
+		void complain(std::string level);
+
 };
+
+int find_level(std::string level);

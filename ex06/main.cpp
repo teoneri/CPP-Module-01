@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mneri <mneri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 16:26:29 by mneri             #+#    #+#             */
-/*   Updated: 2023/09/29 15:25:14 by mneri            ###   ########.fr       */
+/*   Created: 2023/09/29 15:34:35 by mneri             #+#    #+#             */
+/*   Updated: 2023/09/29 16:10:33 by mneri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Harl.hpp"
 
-class Harl
+int main(int argc, char **argv)
 {
-	private:
-		void debug(void);
-		void info(void);
-		void warning(void);
-		void error(void);
-    typedef void (Harl::*LogFunction)(void);
-    LogFunction logFunctions[4];
-	public:
-		Harl(void);
-		~Harl(void);
-		void	complain(std::string level);
-};
+	if(argc != 2)
+		return 0;
+	Harl harl;
+	std::string str = argv[1];
+	harl.complain(str);
+}
