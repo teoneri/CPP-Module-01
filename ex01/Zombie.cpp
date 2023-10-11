@@ -6,7 +6,7 @@
 /*   By: mneri <mneri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 14:32:44 by mneri             #+#    #+#             */
-/*   Updated: 2023/09/27 14:38:51 by mneri            ###   ########.fr       */
+/*   Updated: 2023/10/11 15:56:40 by mneri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,14 @@ Zombie::Zombie()
 Zombie::Zombie(std::string name)
 {
 	_name = name;
+}
+
+std::string Zombie::getName()
+{
+	return this->_name;
+}
+
+void Zombie::setName(std::string name)
+{
+	this->_name = name;
 }
